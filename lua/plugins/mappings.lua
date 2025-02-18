@@ -27,7 +27,7 @@ return {
           ["<Leader>md"] = { "<cmd>PeekOpen<cr>", desc = "open preview" },
           ["<Leader>mc"] = { "<cmd>PeekClose<cr>", desc = "close preview" },
           ["<Leader>m"] = { name = "Markdown" },
-          ["<Leader>a"] = { "<cmd>ArgWrap<cr>", desc = "Wrap lines" },
+          ["<Leader>a"] = { "<cmd>ArgonautToggle<cr>", desc = "Wrap lines" },
         },
       },
     },
