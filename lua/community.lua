@@ -26,7 +26,6 @@ return {
   -- { import = "astrocommunity.editing-support.copilotchat-nvim" },
   { import = "astrocommunity.completion.supermaven-nvim" },
   { import = "astrocommunity.pack.go" },
-  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.editing-support.bigfile-nvim" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.undotree" },
