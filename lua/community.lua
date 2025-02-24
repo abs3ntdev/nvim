@@ -21,6 +21,7 @@ return {
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.search.nvim-spectre" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
+  { import = "astrocommunity.fuzzy-finder.namu-nvim" },
   -- { import = "astrocommunity.completion.copilot-cmp" },
   -- { import = "astrocommunity.editing-support.copilotchat-nvim" },
   { import = "astrocommunity.completion.supermaven-nvim" },
