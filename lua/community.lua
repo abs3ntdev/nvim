@@ -28,7 +28,6 @@ return {
   { import = "astrocommunity.editing-support.bigfile-nvim" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.undotree" },
-  -- { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.pack.helm" },
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.rust" },
