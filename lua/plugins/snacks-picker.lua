@@ -30,7 +30,6 @@ return {
           desc = "Find lines",
         }
         maps.n["<Leader>fa"] = {
-
           function()
             require("snacks").picker.files {
               dirs = { tostring(vim.fn.stdpath "config") },
@@ -68,6 +67,7 @@ return {
         maps.n["<Leader>fr"] = { function() require("snacks").picker.registers() end, desc = "Find registers" }
         maps.n["<Leader>fs"] = { function() require("snacks").picker.smart() end, desc = "Find buffers/recent/files" }
         maps.n["<Leader>ft"] = { function() require("snacks").picker.colorschemes() end, desc = "Find themes" }
+        maps.n["<Leader>fy"] = { function() require("snacks").picker.cliphist() end, desc = "Find clipboard history" }
         if vim.fn.executable "rg" == 1 then
           maps.n["<Leader>fw"] = { function() require("snacks").picker.grep() end, desc = "Find words" }
           maps.n["<Leader>fW"] = {
@@ -77,38 +77,6 @@ return {
         end
         maps.n["<Leader>lD"] = { function() require("snacks").picker.diagnostics() end, desc = "Search diagnostics" }
         maps.n["<Leader>ls"] = { function() require("snacks").picker.lsp_symbols() end, desc = "Search symbols" }
-      end,
-    },
-    {
-      "AstroNvim/astrolsp",
-      ---@param opts AstroLSPOpts
-      opts = function(_, opts)
-        if opts.mappings.n.gd then
-          opts.mappings.n.gd[1] = function() require("snacks").picker.lsp_definitions { reuse_win = true } end
-        end
-        if opts.mappings.n.gI then
-          opts.mappings.n.gI[1] = function() require("snacks").picker.lsp_implementations { reuse_win = true } end
-        end
-        if opts.mappings.n.gy then
-          opts.mappings.n.gy[1] = function() require("snacks").picker.lsp_type_definitions { reuse_win = true } end
-        end
-        if opts.mappings.n["<Leader>lG"] then
-          opts.mappings.n["<Leader>lG"][1] = function()
-            vim.ui.input({ prompt = "Symbol Query: (leave empty for word under cursor)" }, function(query)
-              if query then
-                -- word under cursor if given query is empty
-                if query == "" then query = vim.fn.expand "<cword>" end
-                require("snacks").picker.lsp_workspace_symbols {
-                  query = query,
-                  prompt_title = ("Find word (%s)"):format(query),
-                }
-              end
-            end)
-          end
-        end
-        if opts.mappings.n["<Leader>lR"] then
-          opts.mappings.n["<Leader>lR"][1] = function() require("snacks").picker.lsp_references() end
-        end
       end,
     },
     {
